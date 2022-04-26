@@ -85,10 +85,10 @@
             @if(Route::has('login'))
              @auth
                 <x-app-layout>
-   
+
                 </x-app-layout>
-   
-            
+
+
             @else
 
             <li class="nav-item">
@@ -108,6 +108,19 @@
       </div> <!-- .container -->
     </nav>
   </header>
+
+  @if(session()->has('message'))
+
+          <div class="alert alert-success">
+
+            <button type="button" class="close" data-dismiss="alert">
+              x
+            </button>
+
+            {{session()->get('message')}}
+          </div>
+
+          @endif
 
   <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/bg_image_1.jpg);">
     <div class="hero-section">
@@ -175,7 +188,7 @@
   @include('user.latest');
    @include('user.appointment');
 
-  
+
   <footer class="page-footer">
     <div class="container">
       <div class="row px-md-3">
@@ -237,6 +250,6 @@
 <script src="../assets/vendor/wow/wow.min.js"></script>
 
 <script src="../assets/js/theme.js"></script>
-  
+
 </body>
 </html>
